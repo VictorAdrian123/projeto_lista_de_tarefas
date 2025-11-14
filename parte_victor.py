@@ -1,3 +1,7 @@
+from parte_walyson import editar_tarefa, marcar_concluida
+from parte_pacheco import adicionar_tarefa, listar_tarefas
+
+
 tarefas = []
 
 def menu():

@@ -1,6 +1,3 @@
-
-
-
 def marcar_concluida(tarefas):
     """Marca uma tarefa como concluída usando os conceitos solicitados"""
     print("\n--- LISTA DE TAREFAS ---")
