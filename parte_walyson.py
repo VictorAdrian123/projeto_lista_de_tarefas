@@ -1,4 +1,4 @@
-from ast import Try
+
 
 
 def marcar_concluida(tarefas):
@@ -65,7 +65,7 @@ def editar_tarefa(tarefas):
             
     except ValueError:
         print("Por favor, digite um número válido!")
-        return tarefas 
+        return tarefas
             
                 
                
