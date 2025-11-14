@@ -7,10 +7,8 @@ def adicionar_tarefa(tarefas):
 def listar_tarefas(tarefas):
     if len(tarefas) == 0:
         print("Nenhuma tarefa cadastrada.")
-        return
-
-    print("\nLista de tarefas:")
-    for indice, tarefa in enumerate(tarefas):
-        numero = indice + 1
-        print(f"{numero}. {tarefa['nome']} — {tarefa['status']}")
-    print()
+    else:
+        print("\nLista de tarefas:")
+        for i, t in enumerate(tarefas):
+            print(i + 1, "-", t["nome"], "-", t["status"])
+        print()
