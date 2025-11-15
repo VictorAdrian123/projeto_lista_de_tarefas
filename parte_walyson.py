@@ -1,73 +1,65 @@
-from ast import Try
-
-
 def marcar_concluida(tarefas):
-    """Marca uma tarefa como concluída usando os conceitos solicitados"""
-    print("\n--- LISTA DE TAREFAS ---")
-    for indice, tarefa in enumerate(tarefas, start=1):
-        print(f"{indice}. {tarefa[0]} - [{tarefa[1]}]")
-    try:
-        numero = int(input("\nDigite o número da tarefa a marcar como concluída: "))
-        
-        if 1 <= numero <= len(tarefas):
-            indice = numero - 1
-            descricao_atual, status_atual = tarefas[indice]
-            
-            novas_tarefas = []
-            
-            for i, tarefa in enumerate(tarefas):
-                if i == indice:
-                    novas_tarefas.append((tarefa[0], "concluída"))
-                else:
-                    novas_tarefas.append(tarefa)
-                    rint(f" Tarefa '{descricao_atual}' marcada como concluída!")
-            return novas_tarefas
-            
-        else:
-            print(" Número inválido! Tarefa não encontrada.")
-            return tarefas
-            
-    except ValueError:
-        print(" Por favor, digite um número válido!")
-        return tarefas
+    listar_tarefas(tarefas) 
+
+    if len(tarefas) == 0:
+        print("Nao tem tarefas!")
+        return
     
-def editar_tarefa(tarefas):
-    """Edita o nome de uma tarefa usando os conceitos solicitados"""
-
-    print("\n--- LISTA DE TAREFAS ---")
-    for indice, tarefa in enumerate(tarefas, start=1):
-        print(f"{indice}. {tarefa[0]} - [{tarefa[1]}]")  
+    numero = input("Digite o numero da tarefa para concluir: ")
+    
     try:
-        numero = int(input("\nDigite o número da tarefa a editar: "))
-        if 1 <= numero <= len(tarefas):
-            indice = numero - 1
+        numero_int = int(numero)
+    except:
+        print("Digite um numero valido!")
+        return
+    
+    if numero_int < 1 or numero_int > len(tarefas):
+        print("Numero nao existe!")
+        return
+    
+    indice = numero_int - 1
+    tarefa = tarefas[indice]
+    tarefa["status"] = "concluida"
+    print("Tarefa concluida!")
 
-            novo_nome = input("Digite o novo nome da tarefa: ").strip()
-            if novo_nome:
-                descricao_antiga, status_atual = tarefas[indice]
-                
-                novas_tarefas = []
-                for i, tarefa in enumerate(tarefas):
-                    if i == indice:
-                        novas_tarefas.append((novo_nome, tarefa[1]))
+def editar_tarefa(tarefas):
+    listar_tarefas(tarefas)
+    
+    if len(tarefas) == 0:
+        print("Nao tem tarefas!")
+        return
+    
+    numero = input("Digite o numero da tarefa para editar: ")
+    
+    try:
+        numero_int = int(numero)
+    except:
+        print("Digite um numero valido!")
+        return
+    
+    if numero_int < 1 or numero_int > len(tarefas):
+        print("Numero nao existe!")
+        return
+    
+    indice = numero_int - 1
+    tarefa = tarefas[indice]
+    
+    print("Tarefa atual: " + tarefa["nome"])
+    
+    nova_descricao = input("Nova descricao: ")
+    
+    if nova_descricao == "":
+        print("Descricao nao pode ser vazia!")
+        return
+    
+    tarefa["nome"] = nova_descricao 
+    print("Tarefa editada!")
 
-                else:
-                        novas_tarefas.append(tarefa)
-                
-                print(f"Tarefa editada: '{descricao_antiga}' → '{novo_nome}'")
-                return novas_tarefas
-            else:
-                print("O nome não pode estar vazio!")
-                return tarefas
-        else:
-            print("Número inválido! Tarefa não encontrada.")
-            return tarefas
+def remover_tarefa(tarefas):
+    print("Função remover_tarefa ainda não implementada")
+
+if __name__ == "__main__":
+    main()
+
             
-    except ValueError:
-        print("Por favor, digite um número válido!")
-        return tarefas 
-            
-                
-               
-
-
+   
