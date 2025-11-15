@@ -20,7 +20,6 @@ def remover_tarefa(tarefas):
             confirm = input(f"Tem certeza que quer remover '{tarefas[idx]['titulo']}'? (s/N: ").strip().lower()
             if confirm == "s":
                 removida = tarefas.pop(idx)
-                salvar_tarefas(tarefas)
                 print(f"Tarefa '{removida['titulo']}' removida com sucesso. " )
             else:
                 print("Remoção cancelada. ")
