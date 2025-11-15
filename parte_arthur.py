@@ -24,8 +24,7 @@ def remover_tarefa(tarefas):
                 print(f"Tarefa '{removida['titulo']}' removida com sucesso. " )
             else:
                 print("Remoção cancelada. ")
-
-            escolha = input("Escolha uma opção: ").strip()
+                
             if escolha == "4":
                 remover_tarefa(tarefas)
             elif escolha == "6":
