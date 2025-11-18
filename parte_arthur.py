@@ -7,12 +7,12 @@ def remover_tarefa(tarefas):
         for t in tarefas:
             if t['id'] == entrada:
                 confirmar = input(f"\nTem certeza que deseja remover {t['titulo']}? (s/n)").strip().lower()
-                if confirmar == 's':
-                    tarefas.remove(t)
-                    print("\nTarefa removida!")
-                else:
-                    print("\nRemoção cancelada!")
-                    return
+            if confirmar == 's':
+                tarefas.remove(t)
+                print(f"Tarefa removida com sucesso. ")
+            else:
+                print("\nRemoção de Tarefa cancelada. ")
+                return
 
                 entrada = True
                 break
