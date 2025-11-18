@@ -85,7 +85,7 @@ def remover_tarefa(tarefas):
                 confirmar = input(f"\nTem certeza que deseja remover {t['nome']}? (s/n)").strip().lower()
                 if confirmar == 's':
                     tarefas.remove(t)
-                    print("\nTarefa removida!")
+                    print(f"\nTarefa removida!")
                 else:
                     print("\nRemoção cancelada!")
                     return
