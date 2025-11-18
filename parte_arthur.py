@@ -2,7 +2,7 @@
 def remover_tarefa(tarefas):
             
     entrada = False
-    while not Entrada:
+    while not entrada:
         entrada = int(input("\nDigite o id da tarefa que deseja remover: "))
         
         for t in tarefa:
