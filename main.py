@@ -1,4 +1,4 @@
-tarefas = []
+tarefas = [] 
 
 def adicionar_tarefa(tarefas):
     nome = input("\nDigite o nome da tarefa: ")
