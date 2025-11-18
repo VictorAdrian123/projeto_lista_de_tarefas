@@ -8,15 +8,15 @@ def remover_tarefa(tarefas):
         for t in tarefa:
             if t['id'] == entrada:
                 confirmar = input(f"\nTem certeza que deseja remover {t['titulo']}? (s/n)").strip().lower()
-                if confirmar == 's':
-                    tarefas.remove(t)
-                    print(f"Tarefa removida com sucesso. ")
-    else:
-        print("\nRemoção de Tarefa cancelada. ")
-        return
+            if confirmar == 's':
+                tarefas.remove(t)
+                print(f"Tarefa removida com sucesso. ")
+            else:
+                print("\nRemoção de Tarefa cancelada. ")
+                return
 
-    entrada = True
-    break
+            entrada = True
+            break
 
 if not entrada:
     print("nid inexistente, Ddigite novamente. \n")
