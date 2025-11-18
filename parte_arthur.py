@@ -18,5 +18,5 @@ def remover_tarefa(tarefas):
             entrada = True
             break
 
-if not entrada:
-    print("nid inexistente, Ddigite novamente. \n")
+        if not entrada:
+            print("nid inexistente, Ddigite novamente. \n")
