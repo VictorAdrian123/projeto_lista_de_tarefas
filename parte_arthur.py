@@ -1,33 +1,22 @@
-def pedir_indice(tarefas, texto="Numero da tarefa: "):
-            if not tarefas:
-                print("Nenhuma tarefa para selecionar")
-                return None
-            listar_tarefas(tarefas)
-            try:
-                n = int(input(texto).strip())
-            except ValueError:
-                print("Entrada invalida. Digite um numero.")
-                return None
-            if 1 <= len(tarefas):
-                return n - 1
-            print("Numero invalido.")
-            return None
 
 def remover_tarefa(tarefas):
-            idx = pedir_indice(tarefas,"Numero da tarefa para remover: ")
-            if idx is None:
-                return
-            confirm = input(f"Tem certeza que quer remover '{tarefas[idx]['titulo']}'? (s/N: ").strip().lower()
-            if confirm == "s":
-                removida = tarefas.pop(idx)
-                print(f"Tarefa '{removida['titulo']}' removida com sucesso. " )
-            else:
-                print("Remoção cancelada. ")
-            if escolha == "4":
-                remover_tarefa(tarefas)
-            elif escolha == "6":
-                print("Saindo... por favor aguarde")
-                break
+            
+    entrada = False
+    while not Entrada:
+        entrada = int(input("\nDigite o id da tarefa que deseja remover: "))
+        
+        for t in tarefa:
+            if t['id'] == entrada:
+                confirmar = input(f"\nTem certeza que deseja remover {t['titulo']}? (s/n)").strip().lower()
+                if confirmar == 's':
+                    tarefas.remove(t)
+                    print(f"Tarefa removida com sucesso. ")
+    else:
+        print("\nRemoção de Tarefa cancelada. ")
+        return
 
-            else:
-                print("Opção invalida. Digite um numero de 1 a 6 ")
+    entrada = True
+    break
+
+if not entrada:
+    print("nid inexistente, Ddigite novamente. \n")
